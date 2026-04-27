@@ -1,25 +1,19 @@
 class AtoCli < Formula
   desc "ato CLI (meta-runtime)"
   homepage "https://ato.run"
-  version "0.4.84"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/ato-run/ato-cli/releases/download/v0.4.84/ato-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "6406e02a86b9b6ce64d82a7abcdd579089949568f73853a5f1f4e92ab46b8931"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/ato-run/ato-cli/releases/download/v0.4.84/ato-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "78158e2b5387123c72fdd0fad4785ac48b063f2e6d7b5a55b3d2ce4511706b2a"
-    end
+  version "0.4.85"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/ato-run/ato/releases/download/v0.4.85/ato-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "6ac3d535499cfa63336862ee562310ae6e28ff96f18f3b82ffd48533d0f80d15"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ato-run/ato-cli/releases/download/v0.4.84/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "971db29508aa92cad704fb840269e6d09d4142a59ad8a03c15d36d361bf5bc4e"
+      url "https://github.com/ato-run/ato/releases/download/v0.4.85/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "674ceb0c3b41c34f57d5c81ec3949fe5cc630200d72c661e1e8acfe0a3eb1ba9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ato-run/ato-cli/releases/download/v0.4.84/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "12faba90ee5e28d63344aea167d45b963936f4148aeb8668ed9cefb5bfcbbea1"
+      url "https://github.com/ato-run/ato/releases/download/v0.4.85/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "74e3d217f126e04e63e1ede3f0e40f29c8d410769aa54eeeb5cc88d77690b56d"
     end
   end
   license "Apache-2.0"
@@ -27,7 +21,6 @@ class AtoCli < Formula
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
     "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
@@ -49,7 +42,6 @@ class AtoCli < Formula
 
   def install
     bin.install "ato" if OS.mac? && Hardware::CPU.arm?
-    bin.install "ato" if OS.mac? && Hardware::CPU.intel?
     bin.install "ato" if OS.linux? && Hardware::CPU.arm?
     bin.install "ato" if OS.linux? && Hardware::CPU.intel?
 
