@@ -1,19 +1,19 @@
 class Nacelle < Formula
   desc "The Source Runtime for Capsules"
   homepage "https://ato.run"
-  version "0.4.104"
+  version "0.4.105"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ato-run/ato/releases/download/v0.4.104/nacelle-aarch64-apple-darwin.tar.xz"
-    sha256 "7ade26b57fc7971b26609c56218cd97d06dfdce186fe9d753fd3dce8a9172b02"
+    url "https://github.com/ato-run/ato/releases/download/v0.4.105/nacelle-aarch64-apple-darwin.tar.xz"
+    sha256 "f679571ff6936f14706e626f4a8e8035ec72a76f7a663c2d1ba299535e516467"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ato-run/ato/releases/download/v0.4.104/nacelle-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d35ec1e2ef173903d8debf0a078025825aadde704708f9879ba05a111206439d"
+      url "https://github.com/ato-run/ato/releases/download/v0.4.105/nacelle-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "09eac6d24cf8dd0dca6072dc5d965ca865891ef2b3d8a2c786bd1f3116a416ec"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ato-run/ato/releases/download/v0.4.104/nacelle-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0ea0f7a6246eebbd38feedea55c2b0a2f211cae127ed8c933678c04865e422b9"
+      url "https://github.com/ato-run/ato/releases/download/v0.4.105/nacelle-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3e31f026cf56ffa44cc4acf7e59abe52899c5416c4e6f6d30839bd40b320c61e"
     end
   end
   license "Apache-2.0"
