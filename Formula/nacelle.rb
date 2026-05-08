@@ -4,16 +4,16 @@ class Nacelle < Formula
   version "0.5.1"
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/ato-run/ato/releases/download/v0.5.1/nacelle-aarch64-apple-darwin.tar.xz"
-    sha256 "81eedabf8ae709dd27979a5a5e178af01681f60cb0f4aa11a29679f059e02087"
+    sha256 "2cd3c751d9ca8e9add47d26471befe7a043c20103e78155144282fd991331c16"
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/ato-run/ato/releases/download/v0.5.1/nacelle-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2f8864856e5a2f92452df9ac629713d613cc649d6da8b4325cfe8fd04760fced"
+      sha256 "976359f43f24d524af0d31775c59b5a5f3ac76c3a48eebd1de4cbd2bb4fcfa0f"
     end
     if Hardware::CPU.intel?
       url "https://github.com/ato-run/ato/releases/download/v0.5.1/nacelle-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "187f0bd4a2f939bbbd114e7904d186877b040cf4b4e9eb8b13db4af39d643b6c"
+      sha256 "efc00c8bae0c10c31955ba9b93788e3036d9ad0d3112e512ef9ef007a30a2146"
     end
   end
   license "MPL-2.0"
