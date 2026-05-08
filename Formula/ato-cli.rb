@@ -4,16 +4,16 @@ class AtoCli < Formula
   version "0.5.1"
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/ato-run/ato/releases/download/v0.5.1/ato-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "aecdf3b5dd7c2754f305727437668372c900318ab10ba0169d53d6f1ef652902"
+    sha256 "cf94ea5216968932a85e141e6482ed74d8fb406b292db76310ce91117606c4a4"
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/ato-run/ato/releases/download/v0.5.1/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "948d26088c2700dc30648c4a8e791751be2f261c7043ebeb37716c44137f9a0a"
+      sha256 "c165f33deecc4bb1c827c4eea1259f7e7f685edc1b8c0ecbcd949bcd736e7697"
     end
     if Hardware::CPU.intel?
       url "https://github.com/ato-run/ato/releases/download/v0.5.1/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c7e797e236567e9f236f74c87b91d182f55f45227929c3ed6937b2193a8a88d1"
+      sha256 "ec61f0430af1de88b45675f96086fd6af8a48aa72e6a645506473986b5cb4b35"
     end
   end
   license any_of: ["Apache-2.0", "MPL-2.0"]
