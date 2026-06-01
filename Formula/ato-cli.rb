@@ -1,19 +1,19 @@
 class AtoCli < Formula
   desc "ato CLI (meta-runtime)"
   homepage "https://ato.run"
-  version "0.5.11"
+  version "0.5.12"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ato-run/ato/releases/download/v0.5.11/ato-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "1d4efb12e770fde99d0ea5fecb1a0df9d25b4a8c4173341223518d4e3158e3bf"
+    url "https://github.com/ato-run/ato/releases/download/v0.5.12/ato-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "5a78cca290ead77b03beb40c56315d071a62ae1a335b67b33525110cf5f17eed"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ato-run/ato/releases/download/v0.5.11/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3f9c4a6d90618551796121174b65977dc03dbd502e26bc469d9c77a23b47c0c0"
+      url "https://github.com/ato-run/ato/releases/download/v0.5.12/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "fd5a329bb2a4d699dc792ef06a2780a853f49f00a74d77276606ba0aaf8c5084"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ato-run/ato/releases/download/v0.5.11/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "dd0e1ca955f60ecdad191029e5b2d7da75d7ec4403667207f250a5df79efa067"
+      url "https://github.com/ato-run/ato/releases/download/v0.5.12/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d72645ca6f0a88ded21955145cfa06e1a4abb20ecd1dabe7ad521a102367f08c"
     end
   end
   license any_of: ["Apache-2.0", "MPL-2.0"]
