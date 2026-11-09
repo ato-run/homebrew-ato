@@ -1,26 +1,33 @@
 class AtoCli < Formula
-  desc "ato CLI (meta-runtime)"
+  desc "Ato command line interface for addressable computations"
   homepage "https://ato.run"
-  version "0.6.1"
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ato-run/ato/releases/download/v0.6.1/ato-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "02a42a19f90a824ed7196588bd5e6b661d18f02b05aee8742e156dfc2b854fc9"
+  version "0.8.2"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/ato-run/ato/releases/download/v0.8.2/ato-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "73a91b639b855120a7d1321f5dff6da5daa1dfbb3dde79e5938a9934b8546ede"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ato-run/ato/releases/download/v0.8.2/ato-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "bf6521f107fbb945c40580772bc4f2f439eab80217e15870d8c3ed1b4113c444"
+    end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/ato-run/ato/releases/download/v0.6.1/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b75572f0ccaac155791c2e8efd7e160b74c0a9d988aada6f64a8f475d090af65"
+      url "https://github.com/ato-run/ato/releases/download/v0.8.2/ato-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "0f2655ec95af8dbfce1aa4e40efa018733791fb71ac6358f1758a3dc4eaca876"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ato-run/ato/releases/download/v0.6.1/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c2909b10b18e258c34d2aeddaa485a5136d5db830c2149e44d64c830f2456580"
+      url "https://github.com/ato-run/ato/releases/download/v0.8.2/ato-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6b13769ec5e8585344c1324d7f014e030c2df6908b212cc7386e6c02c2402b07"
     end
   end
-  license any_of: ["Apache-2.0", "MPL-2.0"]
+  license "MPL-2.0"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
     "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
@@ -41,9 +48,18 @@ class AtoCli < Formula
   end
 
   def install
-    bin.install "ato" if OS.mac? && Hardware::CPU.arm?
-    bin.install "ato" if OS.linux? && Hardware::CPU.arm?
-    bin.install "ato" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "ato", "ato-activity-mcp", "ato-formation-session-mcp", "ato-object-graph-upload"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "ato", "ato-activity-mcp", "ato-formation-session-mcp", "ato-object-graph-upload"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "ato", "ato-activity-mcp", "ato-formation-session-mcp", "ato-object-graph-upload"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "ato", "ato-activity-mcp", "ato-formation-session-mcp", "ato-object-graph-upload"
+    end
 
     install_binary_aliases!
 
